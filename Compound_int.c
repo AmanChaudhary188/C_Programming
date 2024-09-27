@@ -14,7 +14,7 @@ int main()
 
     ci = p * pow((1 + r / 100), t) - p;
 
-    printf("\nThe compound interest is %0.2f", ci);
+    printf("\nThe compound interest is %f", ci);
 
     return 0;
 }
