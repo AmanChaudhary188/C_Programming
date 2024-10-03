@@ -1,30 +1,26 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
+    float side1, side2, side3;
 
-int rollNo,physics,chemistry,computer;
-char name[100];
+    printf("Enter the lengths of the three sides of the triangle:\n");
+    scanf("%f %f %f", &side1, &side2, &side3);
 
-printf("Enter Roll No of student: ");
-scanf("%d",&rollNo);
+    if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+        printf("The lengths must be positive numbers.\n");
+    }
 
- printf("Enter your name: ");
-    fgets(name, sizeof(name), stdin);
+    else if (side1 == side2 && side2 == side3) {
+            printf("The triangle is Equilateral.\n");
+        }
+    else if (side1 == side2 || side1 == side3 || side2 == side3) {
+            printf("The triangle is Isosceles.\n");
+        } else if{
+            printf("The triangle is Scalene.\n");
+        }
+    else {
+        printf("The lengths do not form a triangle.\n");
+    }
 
-    printf("Enter the marks of physics,chemistry,computer: ");
-    scanf("%d %d %d ",&physics &chemistry &computer);
-
-    printf("Roll No: %d",rollNo);
-    printf("Name of student: %s",name);
-
-    int total=physics+chemistry+computer;
-    float percentage=(physics+chemistry+computer)/300*100;
-
-    printf("Marks in Physics : %d\n",physics);
-    printf("Marks in Chemistry : %d\n",chemistry);
-    printf("Marks in Computer Application : %d\n",computer);
-
-    printf("Total marks is: %d\n",total);
-    printf("Percentage: %f\n", percentage);
-return 0;
+    return 0;
 }
